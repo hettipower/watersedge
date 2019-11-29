@@ -1,0 +1,43 @@
+.venusContainer{
+    padding: .75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .venueContent{
+        background-color: #fff;
+        color: #000;
+        font-family: "Playfair Display";
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        order: 2;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 2.8rem;
+        }
+
+        .our_venue_cont {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            text-transform: uppercase;
+            color: #000;
+            margin-top: 2rem;
+            border-radius: 33px;
+            border: 2px solid #000;
+            font-family: "Oswald";
+            padding: .5rem 1.5rem;
+        }
+    }
+
+    .venueItem:nth-child(1) {
+        order: 1;
+    }
+}

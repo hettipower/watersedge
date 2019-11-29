@@ -1,0 +1,19 @@
+.singleResturantContent{
+    position: absolute;
+    min-height: 600px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+    transition: 1s all ease;
+    -webkit-transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+}

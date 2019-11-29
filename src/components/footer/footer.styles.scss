@@ -1,0 +1,98 @@
+.footerWrap{
+    .foo_col {
+        width: 55%;
+
+        &.logos_wrap {
+            width: 20%;
+            text-align: center;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .footer_logo {
+                width: 100%;
+                padding: 25px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .creator {
+                width: 100%;
+                margin-top: auto;
+                border-top: 1px solid  #bdbdbd;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                font-size: .8rem;
+            }
+        }
+
+        &.contact_details_wrap{
+            width: 25%;
+        }
+
+        .address_wrap {
+            width: 70%;
+            padding: 1rem 1rem 3rem;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #535252;
+            font-family: "Oswald";
+            font-weight: 100;
+            font-size: 1.5rem;
+            display: inline-flex;
+            justify-content: center;
+
+            .fas {
+                margin-top: 7px;
+                margin-right: 7px;
+            }
+        }
+
+        .social_footer {
+            margin-bottom: 0;
+            border-left: 1px solid #bdbdbd;
+            border-right: 1px solid #bdbdbd;
+            list-style: none;
+            align-items: center;
+            width: 30%;
+            padding: 1rem 1rem 3rem;
+
+            li {
+                margin: 0 6px;
+
+                a {
+                    display: inline-flex;
+                    font-size: .9rem;
+                    border: 1px solid currentColor;
+                    border-radius: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    text-decoration: none;
+                }
+
+                &.facebook{
+                    a{
+                        color: #5b75a9;
+
+                        &:hover{
+                            color: #5b75a9;
+                        }
+                    }
+                }
+
+                &.youtube {
+                    a{
+                        color: #e94345;
+
+                        &:hover{
+                            color: #e94345;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

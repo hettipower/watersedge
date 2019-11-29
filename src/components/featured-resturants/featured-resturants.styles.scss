@@ -1,0 +1,15 @@
+.featured_restaurants{
+    margin-bottom: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #bdbdbd;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+        width: 17%;
+    }
+}

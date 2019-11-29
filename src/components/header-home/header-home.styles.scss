@@ -1,0 +1,39 @@
+.headerHomeWrap{
+    .mainMenuWrap{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 100;
+
+        .menu{
+            border-bottom: 0;
+            justify-content: center;
+    
+            li.nav-item {
+                .nav-link {
+                    font-family: "Oswald";
+                    font-weight: 400;
+                    color: #fff !important;
+                }
+    
+                .sub-menu {
+                    border: none;
+                    background-color: rgba(0,0,0,.5);
+    
+                    li.nav-item{
+                        .nav-link {
+                            color: #fff !important;
+    
+                            &:hover {
+                                background-color: #eee;
+                                color: #000 !important;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
