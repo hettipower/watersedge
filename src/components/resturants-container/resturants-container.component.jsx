@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { Link } from 'react-router-dom';
 
 import { selectRestaurantContent , selectRestaurantImage , selectAllRestaurants } from '../../redux/home/home.selectors';
 
@@ -26,10 +27,18 @@ const ResturantsContainer = ({ restaurantContent , restaurantImage , allRestaura
                     <div className="all_resturents">
                         {
                             (allRestaurants)?
-                            allRestaurants.map( resturant => <div key={resturant.title} className="resturant" onClick={ () => handleResturant(resturant.post)}>
-                                <img src={resturant.image} alt={resturant.title}/>
-                                <h3>{resturant.title}</h3>
-                            </div> )
+                            allRestaurants.map( resturant => {
+                                return (!resturant.customLink)?
+                                <div key={resturant.title} className="resturant" onClick={ () => handleResturant(resturant.post)}>
+                                    <img src={resturant.imageUrl} alt={resturant.title}/>
+                                    <h3>{resturant.title}</h3>
+                                </div>
+                                : <div key={resturant.title} className="resturant">
+                                    <Link to={resturant.customLink.replace('https://www.watersedge.lk' , '')} />
+                                    <img src={resturant.imageUrl} alt={resturant.title}/>
+                                    <h3>{resturant.title}</h3>
+                                </div>
+                            })
                             : ''
                         }
                     </div>
