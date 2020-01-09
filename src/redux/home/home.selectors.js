@@ -47,3 +47,8 @@ export const selectAllRestaurants = createSelector(
     [selectHomeAPI],
     (home) => home.allRestaurants
 );
+
+export const selectClickedRestuant = createSelector(
+    [selectHomeAPI],
+    (home) => home.clickedRestuant
+);

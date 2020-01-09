@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     restaurantImage : null,
     venueContent : null,
     allRestaurants : null,
+    clickedRestuant : null
 }
 
 const homeReducer = ( state = INITIAL_STATE , action ) => {
@@ -58,6 +59,11 @@ const homeReducer = ( state = INITIAL_STATE , action ) => {
             return{
                 ...state,
                 allRestaurants : action.payload
+            }
+        case homeActionTypes.SET_CLICK_RESTURANT:
+            return {
+                ...state,
+                clickedRestuant : action.payload
             }
         default:
             return state;

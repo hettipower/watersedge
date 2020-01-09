@@ -3,17 +3,14 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 
-import { selectRestaurantContent , selectRestaurantImage , selectAllRestaurants } from '../../redux/home/home.selectors';
+import { selectRestaurantContent , selectRestaurantImage , selectAllRestaurants , selectClickedRestuant } from '../../redux/home/home.selectors';
+import { setClickedRestuant } from '../../redux/home/home.actions';
 
 import SingleResturantContent from '../single-resturant-content/single-resturant-content.component';
 
 import './resturants-container.styles.scss';
 
-const ResturantsContainer = ({ restaurantContent , restaurantImage , allRestaurants }) => {
-
-    const handleResturant = (resturantID) => {
-        console.log(resturantID);
-    }
+const ResturantsContainer = ({ restaurantContent , restaurantImage , allRestaurants , setClickedRestuant , clickedRestuant }) => {
     
     return(
         <div className="resturantContainerWrap">
@@ -29,7 +26,7 @@ const ResturantsContainer = ({ restaurantContent , restaurantImage , allRestaura
                             (allRestaurants)?
                             allRestaurants.map( resturant => {
                                 return (!resturant.customLink)?
-                                <div key={resturant.title} className="resturant" onClick={ () => handleResturant(resturant.post)}>
+                                <div key={resturant.title} className="resturant" onClick={ () => setClickedRestuant(resturant.post)}>
                                     <img src={resturant.imageUrl} alt={resturant.title}/>
                                     <h3>{resturant.title}</h3>
                                 </div>
@@ -44,7 +41,7 @@ const ResturantsContainer = ({ restaurantContent , restaurantImage , allRestaura
                     </div>
                 </div>
             </div>
-            <SingleResturantContent/>
+            <SingleResturantContent open={(clickedRestuant) ? 'openResturantContent' : ''} />
         </div>
     )
 };
@@ -53,6 +50,11 @@ const mapStateToProps = createStructuredSelector({
     restaurantContent : selectRestaurantContent,
     restaurantImage : selectRestaurantImage , 
     allRestaurants : selectAllRestaurants,
+    clickedRestuant : selectClickedRestuant
 });
 
-export default connect(mapStateToProps)(ResturantsContainer);
+const mapDispatchToProps = dispatch => ({
+    setClickedRestuant : (clickedRestuant) => dispatch(setClickedRestuant(clickedRestuant))
+});
+
+export default connect(mapStateToProps , mapDispatchToProps)(ResturantsContainer);

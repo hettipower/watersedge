@@ -44,3 +44,8 @@ export const setAllRestaurants = allRestaurants => ({
     type : homeActionTypes.SET_ALL_RESTURANT,
     payload : allRestaurants
 });
+
+export const setClickedRestuant = clickedRestuant => ({
+    type : homeActionTypes.SET_CLICK_RESTURANT,
+    payload : clickedRestuant
+});
